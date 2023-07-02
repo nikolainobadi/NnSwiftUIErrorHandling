@@ -12,15 +12,21 @@ struct TryButtonDemoView: View {
     @State private var shouldShowSuccess = false
     
     let details: String
-
+    
+    private func action(withError: Bool = false) throws {
+        if withError { throw DemoError.tryError }
+        
+        shouldShowSuccess = true
+    }
+    
     var body: some View {
         VStack {
             DemoButton(text: "Success", color: .green, action: {
-                shouldShowSuccess = true
+                try action()
             })
             
             DemoButton(text: "Error", color: .red, action: {
-                throw DemoError.tryError
+                try action(withError: true)
             })
         }
         .withDemoInfo(title: "Try Button", details: details, shouldShowSuccess: $shouldShowSuccess)

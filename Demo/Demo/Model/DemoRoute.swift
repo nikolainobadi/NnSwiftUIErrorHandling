@@ -32,9 +32,9 @@ extension DemoRoute: View {
         case .asyncTryButton:
             AsyncTryButtonDemoView(details: details)
         case .asyncTask:
-            EmptyView()
+            AsyncTaskDemoView(details: details, withError: false)
         case .asyncTaskError:
-            EmptyView()
+            AsyncTaskDemoView(details: details, withError: true)
         }
     }
 }
@@ -49,9 +49,9 @@ extension DemoRoute {
         case .asyncTryButton:
             return "NnAsyncTryButton will show a loading view only while the method is running. If an error is thrown, it will be displayed in an alert."
         case .asyncTask:
-            return "2"
+            return "Using the .asyncTask view modifier will dislay a loading view until the task finishes."
         case .asyncTaskError:
-            return "3"
+            return "Any error thrown when using the .asyncTask view modifier will be displayed."
         }
     }
 }

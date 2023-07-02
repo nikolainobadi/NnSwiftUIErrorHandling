@@ -9,7 +9,7 @@ import Foundation
 import NnSwiftUIErrorHandling
 
 enum DemoError: Error {
-    case tryError, asyncTryError
+    case tryError, asyncTryError, asyncTaskError
 }
 
 
@@ -21,15 +21,19 @@ extension DemoError: NnDisplayableError {
             return "Try Error"
         case .asyncTryError:
             return "Async Try Error"
+        case .asyncTaskError:
+            return "Async Task Error"
         }
     }
     
     var message: String {
         switch self {
         case .tryError:
-            return "This error came from a method that did NOT run asynchronously"
+            return "This error came from a method that did NOT run asynchronously."
         case .asyncTryError:
-            return "This is an error message for a method that had to run asynchonously"
+            return "This is an error message for a method that had to run asynchonously."
+        case .asyncTaskError:
+            return "This error was shown after a task block ran when the view first appeared."
         }
     }
 }

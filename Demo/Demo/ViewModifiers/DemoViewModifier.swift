@@ -24,12 +24,15 @@ struct DemoViewModifier: ViewModifier {
                 .multilineTextAlignment(.center)
             
             if shouldShowSuccess {
+                Spacer()
                 VStack {
                     Text("Yay, the action succeeded!")
                         .bold()
                         .foregroundColor(.green)
                     
                     Button("Reset", action: { shouldShowSuccess = false })
+                        .padding()
+                        .buttonStyle(.borderedProminent)
                 }
             }
             
