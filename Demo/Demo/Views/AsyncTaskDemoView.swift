@@ -25,7 +25,7 @@ struct AsyncTaskDemoView: View {
         }
         .withDemoInfo(title: title, details: details, shouldShowSuccess: $shouldShowSuccess)
         .asyncTask {
-            try await Task.sleep(nanoseconds: 2_000_000_000)
+            try await Task.sleep(nanoseconds: 1_500_000_000)
             
             if withError {
                 throw DemoError.asyncTryError
