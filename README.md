@@ -20,7 +20,7 @@ Import the package:
 
 Add `NnSwiftUIErrorHandlingViewModifier` and `NnLoadingViewModifier` in your App struct to enable error handling and loading state management:
 
-```
+```swift
 @main
 struct MyApp: App {
     var body: some Scene {
@@ -35,7 +35,7 @@ struct MyApp: App {
 
 Use `NnTryButton` or `NnAsyncTryButton` in your views to handle methods that throw errors:
 
-```
+```swift
 struct ContentView: View {
     var body: some View {
         VStack {
@@ -58,7 +58,7 @@ struct ContentView: View {
 
 Use `NnAsyncTaskOnAppearViewModifier` to handle async throws methods in a `.task` block:
 
-```
+```swift
 struct ContentView: View {
     var body: some View {
         Text("Hello, World!")
@@ -73,7 +73,7 @@ struct ContentView: View {
 
 To customize error messages, create custom error types that conform to `NnDisplayableError`:
 
-```
+```swift
 struct CustomError: NnDisplayableError {
     var title: String { "Custom Error" }
     var message: String { "This is a custom error." }
@@ -84,7 +84,7 @@ struct CustomError: NnDisplayableError {
 
 You can add `NnSwiftUIErrorHandling` to a Swift package as a dependency easily. Add the following to the dependencies of your `Package.swift` file:
 
-```
+```swift
 dependencies: [
     .package(url: "https://github.com/yourGitHubUsername/NnSwiftUIErrorHandling.git", .upToNextMajor(from: "1.0.0"))
 ],
