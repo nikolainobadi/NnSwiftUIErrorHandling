@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import NnSwiftUIErrorHandling // only for preview
 
 struct ContentView: View {
     @State private var path = NavigationPath()
@@ -31,8 +32,8 @@ struct ContentView: View {
     }
 }
 
-import NnSwiftUIErrorHandling
 
+// MARK: - Preview
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
