@@ -86,7 +86,7 @@ You can add `NnSwiftUIErrorHandling` to a Swift package as a dependency easily. 
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/yourGitHubUsername/NnSwiftUIErrorHandling.git", .upToNextMajor(from: "1.0.0"))
+    .package(url: "https://github.com/nikolainobadi/NnSwiftUIErrorHandling.git", .upToNextMajor(from: "1.0.0"))
 ],
 targets: [
     .target(
