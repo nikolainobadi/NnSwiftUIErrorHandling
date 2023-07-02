@@ -8,30 +8,35 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var selectedRoute: DemoRoute?
+    @State private var path = NavigationPath()
     
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path) {
             VStack {
                 Text("ErrorHandling Demo")
                     .bold()
                     .font(.title)
                     .minimumScaleFactor(0.5)
                 
+                Spacer()
                 ForEach(DemoRoute.allCases) { route in
-                    Button(action: { selectedRoute = route }) {
+                    Button(action: { path.append(route) }) {
                         Text(route.rawValue)
                     }
                 }
-                
+                Spacer()
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+            .navigationDestination(for: DemoRoute.self, destination: { $0 })
         }
     }
 }
 
+import NnSwiftUIErrorHandling
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .withLoadingView()
+            .withErrorHandling()
     }
 }

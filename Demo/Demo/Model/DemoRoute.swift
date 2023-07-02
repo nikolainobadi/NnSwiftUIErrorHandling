@@ -30,7 +30,7 @@ extension DemoRoute: View {
         case .tryButton:
             EmptyView()
         case .asyncTryButton:
-            EmptyView()
+            AsyncTryButtonDemoView()
         case .asyncTask:
             EmptyView()
         case .asyncTaskError:
