@@ -68,6 +68,7 @@
 			children = (
 				D42F1B392A50FC7400422F9A /* App */,
 				D42F1B382A50FC6F00422F9A /* Views */,
+				D42F1B452A51051A00422F9A /* ViewModifiers */,
 				D42F1B3A2A50FC8000422F9A /* Model */,
 				D42F1B282A50F9F000422F9A /* Assets.xcassets */,
 				D42F1B2A2A50F9F000422F9A /* Preview Content */,
@@ -96,7 +97,6 @@
 				D42F1B262A50F9EF00422F9A /* ContentView.swift */,
 				D42F1B3B2A50FCB100422F9A /* AsyncTryButtonDemoView.swift */,
 				D42F1B3F2A51014F00422F9A /* TryButtonDemoView.swift */,
-				D42F1B432A51026900422F9A /* DemoViewModifier.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -116,6 +116,14 @@
 				D42F1B3D2A51005A00422F9A /* DemoError.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D42F1B452A51051A00422F9A /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				D42F1B432A51026900422F9A /* DemoViewModifier.swift */,
+			);
+			path = ViewModifiers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
