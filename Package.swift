@@ -19,8 +19,5 @@ let package = Package(
             dependencies: [],
             path: "Sources"
         ),
-//        .testTarget(
-//            name: "NnSwiftUIErrorHandlingTests",
-//            dependencies: ["NnSwiftUIErrorHandling"]),
     ]
 )
