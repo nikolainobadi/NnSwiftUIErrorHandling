@@ -8,13 +8,13 @@
 import Foundation
 
 /// Class to handle errors and alert displays within SwiftUI.
-final class NnSwiftUIErrorHandler: ObservableObject {
+public final class NnSwiftUIErrorHandler: ObservableObject {
     
     /// Published variable to hold the current alert. Views can observe this and react when it changes.
     @Published var currentAlert: NnErrorAlert?
     
     /// Function to handle errors. Converts the error to an `NnErrorAlert` and assigns it to `currentAlert`.
-    func handle(error: Error) {
+    public func handle(error: Error) {
         currentAlert = makeErrorAlert(from: error)
     }
 }

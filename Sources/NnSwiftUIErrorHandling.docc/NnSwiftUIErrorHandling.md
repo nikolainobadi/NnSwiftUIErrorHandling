@@ -12,9 +12,16 @@ This package requires iOS 15.0 or later, macOS 12.0 or later, Xcode 13.0 or late
 
 ## Topics
 
-### Essential
+### Buttons
 - ``NnTryButton``
 - ``NnAsyncTryButton``
+
+### Handlers
+- ``NnLoadingHandler``
+- ``NnSwiftUIErrorHandler``
+
+### Other
+- ``NnDisplayableError``
 
 ## See Also
 
