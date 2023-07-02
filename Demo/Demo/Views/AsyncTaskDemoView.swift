@@ -47,7 +47,7 @@ struct AsyncTaskDemoView: View {
 struct AsyncTaskDemoView_Previews: PreviewProvider {
     static var previews: some View {
         AsyncTaskDemoView(details: DemoRoute.asyncTask.details, withError: false)
-            .withLoadingView()
-            .withErrorHandling()
+            .withNnLoadingView()
+            .withNnErrorHandling()
     }
 }

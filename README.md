@@ -26,8 +26,8 @@ struct MyApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .withLoadingView()
-                .withErrorHandling()
+                .withNnLoadingView()
+                .withNnErrorHandling()
         }
     }
 }
@@ -91,7 +91,7 @@ dependencies: [
 targets: [
     .target(
         name: "YourTarget",
-        dependencies: ["NnSwiftUIErrorHandling"]),
+        dependencies: [.product(name: "NnSwiftUIErrorHandling", package: "NnSwiftUIErrorHandling")]),
 ]
 ```
 

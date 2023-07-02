@@ -58,8 +58,8 @@ fileprivate struct DemoButton: View {
 struct TryButtonDemoView_Previews: PreviewProvider {
     static var previews: some View {
         TryButtonDemoView(details: DemoRoute.tryButton.details)
-            .withLoadingView()
-            .withErrorHandling()
+            .withNnLoadingView()
+            .withNnErrorHandling()
     }
 }
 

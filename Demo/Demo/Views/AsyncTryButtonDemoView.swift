@@ -55,7 +55,7 @@ fileprivate struct DemoButton: View {
 struct AsyncTryButtonDemoView_Previews: PreviewProvider {
     static var previews: some View {
         AsyncTryButtonDemoView(details: DemoRoute.asyncTryButton.details)
-            .withLoadingView()
-            .withErrorHandling()
+            .withNnLoadingView()
+            .withNnErrorHandling()
     }
 }

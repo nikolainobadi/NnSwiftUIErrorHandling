@@ -36,7 +36,7 @@ struct NnSwiftUIErrorHandlingViewModifier: ViewModifier {
 
 public extension View {
     /// A function to use NnSwiftUIErrorHandlingViewModifier on any View
-    func withErrorHandling() -> some View {
+    func withNnErrorHandling() -> some View {
         modifier(NnSwiftUIErrorHandlingViewModifier())
     }
 }
