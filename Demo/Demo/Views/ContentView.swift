@@ -9,7 +9,7 @@ import SwiftUI
 import NnSwiftUIErrorHandling // only for preview
 
 struct ContentView: View {
-    @State private var path = NavigationPath()
+    @State private var path = [DemoRoute]()
     
     var body: some View {
         NavigationStack(path: $path) {
@@ -23,11 +23,18 @@ struct ContentView: View {
                 ForEach(DemoRoute.allCases) { route in
                     Button(action: { path.append(route) }) {
                         Text(route.rawValue)
+                            .font(.headline)
+                            .frame(width: 200)
                     }
+                    .buttonStyle(.borderedProminent)
+                    .padding()
                 }
                 Spacer()
             }
-            .navigationDestination(for: DemoRoute.self, destination: { $0 })
+            .navigationDestination(for: DemoRoute.self) { route in
+                route
+                    .navigationTitle(route.rawValue)
+            }
         }
     }
 }

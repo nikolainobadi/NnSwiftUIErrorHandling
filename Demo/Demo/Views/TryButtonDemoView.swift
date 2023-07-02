@@ -1,5 +1,5 @@
 //
-//  AsyncTryButtonDemoView.swift
+//  TryButtonDemoView.swift
 //  Demo
 //
 //  Created by Nikolai Nobadi on 7/1/23.
@@ -8,11 +8,11 @@
 import SwiftUI
 import NnSwiftUIErrorHandling
 
-struct AsyncTryButtonDemoView: View {
+struct TryButtonDemoView: View {
     @State private var shouldShowSuccess = false
     
     let details: String
-    
+
     var body: some View {
         VStack {
             DemoButton(text: "Success", color: .green, action: {
@@ -20,10 +20,10 @@ struct AsyncTryButtonDemoView: View {
             })
             
             DemoButton(text: "Error", color: .red, action: {
-                throw DemoError.asyncTryError
+                throw DemoError.tryError
             })
         }
-        .withDemoInfo(title: "Async Try Button", details: details, shouldShowSuccess: $shouldShowSuccess)
+        .withDemoInfo(title: "Try Button", details: details, shouldShowSuccess: $shouldShowSuccess)
     }
 }
 
@@ -32,13 +32,10 @@ struct AsyncTryButtonDemoView: View {
 fileprivate struct DemoButton: View {
     let text: String
     let color: Color
-    let action: () async throws -> Void
+    let action: () throws -> Void
     
     var body: some View {
-        NnAsyncTryButton {
-            try await Task.sleep(nanoseconds: 2_000_000_000)
-            try await action()
-        } label: {
+        NnTryButton(action: action) {
             Text(text)
                 .bold()
                 .font(.title3)
@@ -52,10 +49,11 @@ fileprivate struct DemoButton: View {
 
 
 // MARK: - Previews
-struct AsyncTryButtonDemoView_Previews: PreviewProvider {
+struct TryButtonDemoView_Previews: PreviewProvider {
     static var previews: some View {
-        AsyncTryButtonDemoView(details: DemoRoute.asyncTryButton.details)
+        TryButtonDemoView(details: DemoRoute.tryButton.details)
             .withLoadingView()
             .withErrorHandling()
     }
 }
+

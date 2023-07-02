@@ -9,7 +9,7 @@ import Foundation
 import NnSwiftUIErrorHandling
 
 enum DemoError: Error {
-    case asyncTryError
+    case tryError, asyncTryError
 }
 
 
@@ -17,6 +17,8 @@ enum DemoError: Error {
 extension DemoError: NnDisplayableError {
     var title: String {
         switch self {
+        case .tryError:
+            return "Try Error"
         case .asyncTryError:
             return "Async Try Error"
         }
@@ -24,6 +26,8 @@ extension DemoError: NnDisplayableError {
     
     var message: String {
         switch self {
+        case .tryError:
+            return "This error came from a method that did NOT run asynchronously"
         case .asyncTryError:
             return "This is an error message for a method that had to run asynchonously"
         }

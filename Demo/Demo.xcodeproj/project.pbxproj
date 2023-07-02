@@ -15,6 +15,8 @@
 		D42F1B372A50FBA700422F9A /* DemoRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42F1B362A50FBA700422F9A /* DemoRoute.swift */; };
 		D42F1B3C2A50FCB100422F9A /* AsyncTryButtonDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42F1B3B2A50FCB100422F9A /* AsyncTryButtonDemoView.swift */; };
 		D42F1B3E2A51005A00422F9A /* DemoError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42F1B3D2A51005A00422F9A /* DemoError.swift */; };
+		D42F1B402A51014F00422F9A /* TryButtonDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42F1B3F2A51014F00422F9A /* TryButtonDemoView.swift */; };
+		D42F1B442A51026900422F9A /* DemoViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42F1B432A51026900422F9A /* DemoViewModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		D42F1B362A50FBA700422F9A /* DemoRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoRoute.swift; sourceTree = "<group>"; };
 		D42F1B3B2A50FCB100422F9A /* AsyncTryButtonDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncTryButtonDemoView.swift; sourceTree = "<group>"; };
 		D42F1B3D2A51005A00422F9A /* DemoError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoError.swift; sourceTree = "<group>"; };
+		D42F1B3F2A51014F00422F9A /* TryButtonDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryButtonDemoView.swift; sourceTree = "<group>"; };
+		D42F1B432A51026900422F9A /* DemoViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoViewModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,8 @@
 			children = (
 				D42F1B262A50F9EF00422F9A /* ContentView.swift */,
 				D42F1B3B2A50FCB100422F9A /* AsyncTryButtonDemoView.swift */,
+				D42F1B3F2A51014F00422F9A /* TryButtonDemoView.swift */,
+				D42F1B432A51026900422F9A /* DemoViewModifier.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -190,6 +196,8 @@
 				D42F1B272A50F9EF00422F9A /* ContentView.swift in Sources */,
 				D42F1B252A50F9EF00422F9A /* DemoApp.swift in Sources */,
 				D42F1B3E2A51005A00422F9A /* DemoError.swift in Sources */,
+				D42F1B442A51026900422F9A /* DemoViewModifier.swift in Sources */,
+				D42F1B402A51014F00422F9A /* TryButtonDemoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
