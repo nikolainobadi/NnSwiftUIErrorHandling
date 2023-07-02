@@ -7,10 +7,12 @@
 
 import Foundation
 
+/// A protocol defining an error that can be displayed to the user.
+/// It requires a title and a message, which can be used to build an NnErrorAlert.
+/// The NnErrorAlert is required by NnSwiftUIErrorHandler to display errors.
 public protocol NnDisplayableError: Error {
-    /// The title of the error. This is typically a short string that summarizes the error.
+    /// The title of the error, used in the header of an NnErrorAlert.
     var title: String { get }
-    
-    /// The message of the error. This is typically a longer string that describes the error in more detail.
+    /// The detailed error message, used in the body of an NnErrorAlert.
     var message: String { get }
 }
