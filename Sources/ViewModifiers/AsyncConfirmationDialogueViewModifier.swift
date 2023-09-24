@@ -10,6 +10,7 @@ import SwiftUI
 struct AsyncConfirmationDialogueViewModifier: ViewModifier {
     @Binding var showingConfirmation: Bool
     
+    let role: ButtonRole?
     let buttonText: String
     let message: String
     let action: () async throws -> Void
@@ -17,7 +18,7 @@ struct AsyncConfirmationDialogueViewModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .confirmationDialog("", isPresented: $showingConfirmation) {
-                NnAsyncTryButton(action: action) {
+                NnAsyncTryButton(action: action, role: role) {
                     Text(buttonText)
                 }
             } message: {
@@ -27,7 +28,7 @@ struct AsyncConfirmationDialogueViewModifier: ViewModifier {
 }
 
 public extension View {
-    func asyncConfirmation(showingConfirmation: Binding<Bool>, buttonText: String, message: String, action: @escaping () async throws -> Void) -> some View {
-        modifier(AsyncConfirmationDialogueViewModifier(showingConfirmation: showingConfirmation, buttonText: buttonText, message: message, action: action))
+    func asyncConfirmation(showingConfirmation: Binding<Bool>, role: ButtonRole? = nil, buttonText: String, message: String, action: @escaping () async throws -> Void) -> some View {
+        modifier(AsyncConfirmationDialogueViewModifier(showingConfirmation: showingConfirmation, role: role, buttonText: buttonText, message: message, action: action))
     }
 }
