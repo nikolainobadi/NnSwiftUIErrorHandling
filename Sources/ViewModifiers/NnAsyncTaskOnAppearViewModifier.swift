@@ -9,6 +9,7 @@ import SwiftUI
 
 /// A SwiftUI ViewModifier that allows for handling async throws methods in a .task block of a SwiftUI view.
 /// The ViewModifier uses `NnLoadingHandler` and `NnSwiftUIErrorHandler` as environment objects to handle loading state and error state respectively.
+@available(iOS 15.0, *)
 struct NnAsyncTaskOnAppearViewModifier: ViewModifier {
     
     /// The loading state handler. It controls the presentation of a loading state UI.
@@ -38,6 +39,7 @@ struct NnAsyncTaskOnAppearViewModifier: ViewModifier {
     }
 }
 
+@available(iOS 15.0, *)
 public extension View {
     /// Applies the NnAsyncTaskOnAppearViewModifier to a view.
     /// It enables the view to perform a given async action in a .task block when the view appears, with built-in loading state and error handling.
