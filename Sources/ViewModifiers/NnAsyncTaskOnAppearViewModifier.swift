@@ -18,15 +18,25 @@ struct NnAsyncTaskOnAppearViewModifier: ViewModifier {
     /// The error handler. It processes any thrown errors and controls the presentation of error messages.
     @EnvironmentObject var errorHandler: NnSwiftUIErrorHandler
     
-    /// The async action that will be performed in the .task block of the view, which can potentially throw an error.
+    let hideLoadingIndicator: Bool
     let asyncAction: () async throws -> Void
+    
+    private func configureLoading(startLoading: Bool) {
+        if hideLoadingIndicator { return }
+        
+        if startLoading {
+            loadingHandler.startLoading()
+        } else {
+            loadingHandler.stopLoading()
+        }
+    }
     
     /// The body of the ViewModifier. It modifies the content view to include a .task block that performs the async action when the view appears.
     /// It starts the loading state, performs the async action, handles any thrown error, and stops the loading state.
     func body(content: Content) -> some View {
         content
             .task {
-                loadingHandler.startLoading()
+                configureLoading(startLoading: true)
                 
                 do {
                     try await asyncAction()
@@ -34,7 +44,7 @@ struct NnAsyncTaskOnAppearViewModifier: ViewModifier {
                     errorHandler.handle(error: error)
                 }
                 
-                loadingHandler.stopLoading()
+                configureLoading(startLoading: false)
             }
     }
 }
@@ -43,7 +53,7 @@ struct NnAsyncTaskOnAppearViewModifier: ViewModifier {
 public extension View {
     /// Applies the NnAsyncTaskOnAppearViewModifier to a view.
     /// It enables the view to perform a given async action in a .task block when the view appears, with built-in loading state and error handling.
-    func asyncTask(_ asyncAction: @escaping () async throws -> Void) -> some View {
-        modifier(NnAsyncTaskOnAppearViewModifier(asyncAction: asyncAction))
+    func asyncTask(hideLoadingIndicator: Bool = false, asyncAction: @escaping () async throws -> Void) -> some View {
+        modifier(NnAsyncTaskOnAppearViewModifier(hideLoadingIndicator: hideLoadingIndicator, asyncAction: asyncAction))
     }
 }
